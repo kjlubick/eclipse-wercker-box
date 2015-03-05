@@ -7,6 +7,7 @@ keywords:
   - openjdk
   - java
   - jdk
+  - ant
   - eclipse
 packages:
   - openjdk-7-jdk
@@ -15,11 +16,12 @@ packages:
   - curl
   - build-essential
 script: |-
-  sudo apt-get update
+  sudo apt-get update -qq
   lsb_release -a
   sudo apt-get install openjdk-7-jdk -qq
+  sudo apt-get install ant ant-contrib -y 
   sudo apt-get install -y wget git-core curl build-essential
-  wget -vO eclipse-kepler.tar.gz 'https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-standard-kepler-SR2-linux-gtk.tar.gz&r=1'
+  wget --quiet -O eclipse-kepler.tar.gz 'https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-standard-kepler-SR2-linux-gtk.tar.gz&r=1'
   tar -xzf eclipse-kepler.tar.gz
   mv eclipse/ ~/eclipse-kepler
   rm eclipse-kepler.tar.gz
