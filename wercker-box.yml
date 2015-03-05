@@ -18,5 +18,5 @@ script: |-
   sudo apt-get update
   sudo apt-get install openjdk-7-jdk -qq
   sudo apt-get install -y wget git-core curl build-essential
-  wget https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-standard-kepler-SR2-linux-gtk.tar.gz&r=1 -O eclipse-kepler.tar.gz
-  tar -xz --directory ~
+  wget  -O eclipse-kepler.tar.gz https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-standard-kepler-SR2-linux-gtk.tar.gz&r=1
+  tar -xz --directory ~ eclipse-kepler.tar.gz
