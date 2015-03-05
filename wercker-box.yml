@@ -1,0 +1,22 @@
+name: eclipse-kepler-openjdk7
+version: 0.0.1
+type: service
+platform: ubuntu@12.04
+description: box with openjdk7 and eclipse kepler installed under the home
+keywords:
+  - openjdk
+  - java
+  - jdk
+  - eclipse
+packages:
+  - openjdk-7-jdk
+  - wget
+  - git-core
+  - curl
+  - build-essential
+script: |-
+  sudo apt-get update
+  sudo apt-get install openjdk-7-jdk -qq
+  sudo apt-get install -y wget git-core curl build-essential
+  wget https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/eclipse-standard-kepler-SR2-linux-gtk.tar.gz&r=1 -O eclipse-kepler.tar.gz
+  tar -xz --directory ~
