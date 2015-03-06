@@ -26,6 +26,7 @@ script: |-
   sudo apt-get install ant ant-contrib -y 
   sudo apt-get install -y wget git-core curl build-essential xvfb
   Xvfb :1 &
+  export DISPLAY=:1
   wget --quiet -O eclipse-luna.tar.gz 'https://github.com/kjlubick/eclipse-wercker-box/releases/download/0.0.1/eclipse-luna.tar.gz'
   tar -xzf eclipse-luna.tar.gz
   mv eclipse/ ~/eclipse
@@ -33,9 +34,9 @@ script: |-
   ls -lh ~
   ls -lh ~/eclipse
   cd ~/eclipse
-  export DISPLAY=:1
-  ./eclipse -nosplash -application org.eclipse.equinox.p2.director -repository http://download.eclipse.org/eclipse/updates/4.4/ -installIU org.eclipse.osgi.compatibility.plugins.feature.feature.group
-  ./eclipse -nosplash -application org.eclipse.equinox.p2.director -repository http://download.eclipse.org/eclipse/updates/4.4/ -installIU org.eclipse.pde.junit.runtime
+  pwd
+  ~/eclipse/eclipse -nosplash -application org.eclipse.equinox.p2.director -repository http://download.eclipse.org/eclipse/updates/4.4/ -installIU org.eclipse.osgi.compatibility.plugins.feature.feature.group
+  ~/eclipse/eclipse -nosplash -application org.eclipse.equinox.p2.director -repository http://download.eclipse.org/eclipse/updates/4.4/ -installIU org.eclipse.pde.junit.runtime
 
   
   
